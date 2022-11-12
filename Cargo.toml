@@ -1,0 +1,21 @@
+[package]
+name = "fpslimiter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+winapi = { version = "^0.3", features = ["std", "everything"] }
+minhook-sys = "0.1.1"
+once_cell = "1.16.0"
+sysinfo = "0.16.4"
+named_pipe = "0.4.1"
+text_io = "0.1.12"
+
+[[bin]]
+name = "fpslimiter_injector"
+path = "src/injector/main.rs"
+
+[lib]
+name = "fpslimiter_library"
+path = "src/library/lib.rs"
+crate-type = ["dylib"]
